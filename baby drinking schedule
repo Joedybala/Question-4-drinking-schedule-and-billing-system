@@ -1,0 +1,32 @@
+
+package com.mycompany.babydrinkingschedule;
+import java.util.*;
+
+public class BabyDrinkingSchedule {
+    public static void main(String[] args) {
+      
+        final double cupvolume = 0.5; //vol in liters with a constant
+        final double porridgevolume = 2.0; // vol inliters
+        final double milkvolume = 2.0; //vol in liters
+
+        final int PORRIDGE_INTERVAL = 45; // number of minutes taken  after half cup
+        final int MILK_INTERVAL = 30; // number of minutes taken after full cup
+
+        int porridgeFeedings = (int)(porridgevolume / cupvolume);
+        int milkFeedings = (int)(milkvolume / cupvolume);
+
+        // Calculating for total time taken
+        int totalPorridgeTime = porridgeFeedings * PORRIDGE_INTERVAL;
+        int totalMilkTime = milkFeedings * MILK_INTERVAL;
+        int totalTime = totalPorridgeTime + totalMilkTime;
+
+        // Converting  hours and minutes to have a uniform unit
+        int hours = totalTime / 60;
+        int minutes = totalTime % 60;
+
+        
+        System.out.println("The baby will take " + totalTime + " minutes (" 
+                           + hours + " hours and " + minutes + " minutes)"
+                           + " to finish both porridge and milk.");
+    }
+}
