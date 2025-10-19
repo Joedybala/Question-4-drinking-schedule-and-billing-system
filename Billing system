@@ -1,0 +1,26 @@
+
+package com.mycompany.billingsystem;
+public class BillingSystem {
+    public static void main(String[] args) {
+        //the intial airtime loaded by the subscriber
+        double initialLoad = 10000; // UGX
+        double serviceCharge = 0.10 * initialLoad; // 10% of initial charge
+        double balance = initialLoad - serviceCharge;
+
+        // time taken during the call
+        int callMinutes = 5;
+        int callSeconds = callMinutes * 60; 
+        int costPerSecond = 200; // cost per second in ugx
+        double callCost = callSeconds * costPerSecond;
+
+        // calculatingthe remaining balance after the call
+        double remainingBalance = balance - callCost;
+
+        System.out.println("Initial load: UGX " + initialLoad);
+        System.out.println("Service charge (10%): UGX " + serviceCharge);
+        System.out.println("Balance after service charge: UGX " + balance);
+        System.out.println("Call duration: " + callMinutes + " minutes (" + callSeconds + " seconds)");
+        System.out.println("Call cost: UGX " + callCost);
+        System.out.println("Remaining balance: UGX " + remainingBalance);
+    }
+}
